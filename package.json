@@ -1,7 +1,7 @@
 {
   "name": "generator-nmod",
   "version": "0.1.0",
-  "description": "Yeoman generator to build an node module es6, nyc, travis-ci, codecov.io",
+  "description": "Yeoman generator to build an node module using es6, nyc, travis-ci, coveralls",
   "main": "./index.js",
   "scripts": {
     "lint": "eslint generators test",
@@ -14,12 +14,14 @@
   },
   "keywords": [
     "yeoman",
+    "yeoman-generator",
+    "node",
     "javascript",
+    "js",
+    "module",
     "library",
-    "semantic-release",
     "travis",
-    "codecov",
-    "commitizen",
+    "coveralls",
     "mocha",
     "chai"
   ],
