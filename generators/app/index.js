@@ -12,7 +12,6 @@ module.exports = class extends Generator {
 		this.props = {};
 		this.gitc = gitConfig.sync();
 		this.gitc.user = this.gitc.user || {};
-		this.sourceRoot(path.join(__dirname, '../../templates'));
 	}
 
 	prompting() {
@@ -48,6 +47,11 @@ module.exports = class extends Generator {
 			type: 'input',
 			name: 'authorWebsite',
 			message: 'What\'s the website of the author?'
+		}, {
+			name: 'includeCoveralls',
+			type: 'confirm',
+			message: 'Send coverage reports to coveralls',
+			when: this.options.coveralls === undefined
 		}];
 
 		return this.prompt(prompts).then(answers => {
@@ -67,12 +71,21 @@ module.exports = class extends Generator {
 		}
 
 		this.composeWith(require.resolve('generator-license'), {
-			options: {
-				name: this.props.authorName,
-				email: this.props.authorEmail,
-				website: this.props.authorWebsite,
-			},
+			name: this.props.authorName,
+			email: this.props.authorEmail,
+			website: this.props.authorWebsite,
 		});
+
+		if (!this.fs.exists(this.destinationPath('README.md'))) {
+			this.composeWith(require.resolve('../readme'), {
+				name: this.props.name,
+				description: this.props.description,
+				githubUsername: this.props.githubUsername,
+				authorName: this.props.authorName,
+				authorUrl: this.props.authorUrl,
+				coveralls: this.props.includeCoveralls
+			});
+		}
 	}
 
 	writing() {
@@ -93,19 +106,11 @@ module.exports = class extends Generator {
 
 				const opts = Object.assign({license: ''}, this.props);
 
-				if (dest.charAt(0) === '.') {
-					this.fs.copy(
-						this.templatePath(file),
-						this.destinationPath(dest),
-						opts
-					);
-				} else {
-					this.fs.copyTpl(
-						this.templatePath(file),
-						this.destinationPath(dest),
-						opts
-					);
-				}
+				this.fs.copyTpl(
+					this.templatePath(file),
+					this.destinationPath(dest),
+					opts
+				);
 			});
 			done();
 		});

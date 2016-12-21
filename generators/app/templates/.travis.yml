@@ -14,8 +14,10 @@ before_script:
   - npm prune
 script:
   - npm test
+<% if (includeCoveralls) { %>
 after_success:
   - npm run coverage
+<% } %>
 branches:
   only:
     - master

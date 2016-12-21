@@ -1,13 +1,13 @@
 {
   "name": "generator-nmod",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Yeoman generator to build an node module es6, nyc, travis-ci, codecov.io",
-  "main": "./app/index.dist.js",
+  "main": "./index.js",
   "scripts": {
     "lint": "eslint app test",
     "test": "npm run lint && mocha test/**/*.test.js",
-    "build": "babel app/index.es6.js -o app/index.js",
-    "prepublish": "in-install || npm run build"
+    "prepublish": "in-install",
+    "clean:coverage": "rimraf .nyc_output coverage"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,8 @@
     "eslint-plugin-mocha": "^4.7.0",
     "eslint-plugin-react": "^6.8.0",
     "mocha": "^3.2.0",
+    "npm-run-all": "^3.1.2",
+    "rimraf": "^2.5.4",
     "xo": "^0.17.1",
     "yeoman-assert": "^2.2.2",
     "yeoman-test": "^1.6.0"
@@ -58,6 +60,7 @@
     "git-config": "0.0.7",
     "glob": "^7.1.1",
     "in-publish": "^2.0.0",
+    "lodash": "^4.17.2",
     "mkdirp": "^0.5.1",
     "yeoman-generator": "^1.0.1"
   },

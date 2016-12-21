@@ -1,10 +1,11 @@
-# Yeoman generator for node modules
+# generator-nmod
 
 [![NPM version](http://img.shields.io/npm/v/generator-nmod.svg?style=flat-square)](http://npmjs.org/generator-nmod)
 [![NPM downloads](http://img.shields.io/npm/dm/generator-nmod.svg?style=flat-square)](http://npmjs.org/generator-nmod)
 [![Build Status](http://img.shields.io/travis/taoyuan/generator-nmod/yeoman-generator.svg?style=flat-square)](https://travis-ci.org/taoyuan/generator-nmod)
 [![Dependency Status](http://img.shields.io/david/taoyuan/generator-nmod.svg?branch=yeoman-generator&style=flat-square)](https://david-dm.org/taoyuan/generator-nmod)
-[![Chat](http://img.shields.io/badge/chat_room-%23babel--starter--kit-blue.svg?style=flat-square)](https://gitter.im/taoyuan/generator-nmod)
+
+> Yeoman generator for node modules
 
 ## Getting Started
 

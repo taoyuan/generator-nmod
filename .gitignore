@@ -1,5 +1,2 @@
 npm-debug.log*
 node_modules
-
-# index.js is built with babel in this case (generatos must have index.js)
-app/index.js
