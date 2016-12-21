@@ -1,6 +1,6 @@
 {
   "name": "generator-nmod",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Yeoman generator to build an node module using es6, nyc, travis-ci, coveralls",
   "main": "./index.js",
   "scripts": {
