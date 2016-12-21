@@ -1,4 +1,4 @@
-/* eslint-env mocha */
+'use strict';
 
 const path = require('path');
 const helpers = require('yeoman-test');
