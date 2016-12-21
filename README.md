@@ -37,7 +37,7 @@ npm install -g generator-nmod
 Finally, initiate the generator:
 
 ```bash
-yo javascript
+yo nmod
 ```
 
 ### Getting To Know Yeoman
