@@ -4,8 +4,8 @@ const _ = require('lodash');
 const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
-	constructor() {
-		super(...arguments);
+	constructor(args, opts) {
+		super(args, opts);
 
 		this.option('generateInto', {
 			type: String,
