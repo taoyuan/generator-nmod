@@ -5,7 +5,7 @@
 [![Build Status](http://img.shields.io/travis/taoyuan/generator-nmod/yeoman-generator.svg?style=flat-square)](https://travis-ci.org/taoyuan/generator-nmod)
 [![Coverage Status](https://img.shields.io/coveralls/taoyuan/generator-nmod.svg?style=flat-square)](https://coveralls.io/taoyuan/generator-nmod)
 
-> Yeoman generator for node modules
+> Yeoman generator to build an node module using es6, nyc, travis-ci, coveralls
 
 ## Getting Started
 
