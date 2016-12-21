@@ -26,7 +26,7 @@ module.exports = class extends Generator {
 			desc: 'Project description'
 		});
 
-		this.option('githubUsername', {
+		this.option('githubAccount', {
 			type: String,
 			required: true,
 			desc: 'User github account'
@@ -60,7 +60,7 @@ module.exports = class extends Generator {
 				name: this.options.name,
 				safeName: _.camelCase(this.options.name),
 				description: this.options.description,
-				githubUsername: this.options.githubUsername,
+				githubAccount: this.options.githubAccount,
 				author: {
 					name: this.options.authorName,
 					url: this.options.authorUrl

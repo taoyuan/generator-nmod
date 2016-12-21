@@ -12,7 +12,7 @@ describe('nmod:app', () => {
 					name: 'nmod-temp',
 					description: 'A node module',
 					homepage: 'http://yeoman.io',
-					githubUsername: 'yeoman',
+					githubAccount: 'yeoman',
 					authorName: 'The Yeoman Team',
 					authorEmail: 'hi@yeoman.io',
 					authorUrl: 'http://yeoman.io',

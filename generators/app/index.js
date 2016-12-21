@@ -32,14 +32,14 @@ module.exports = class extends Generator {
 			message: 'Write a short description for your library.',
 		}, {
 			type: 'input',
-			name: 'githubUsername',
+			name: 'githubAccount',
 			message: 'What is your github username (or organisation)?',
 			default: (this.gitc.github) ? (this.gitc.github.user) : null
 		}, {
 			type: 'input',
 			name: 'authorName',
 			message: 'Who\'s the author of the library?',
-			default: answers => this.gitc.user.name || answers.githubUsername,
+			default: answers => this.gitc.user.name || answers.githubAccount,
 		}, {
 			type: 'input',
 			name: 'authorEmail',
@@ -58,7 +58,7 @@ module.exports = class extends Generator {
 
 		return this.prompt(prompts).then(answers => {
 			Object.assign(this.props, answers, {
-				githubSlug: answers.githubUsername && `${answers.githubUsername}/${answers.name}`,
+				githubSlug: answers.githubAccount && `${answers.githubAccount}/${answers.name}`,
 				camelCaseName: camelcase(answers.name),
 			});
 		});
@@ -72,6 +72,11 @@ module.exports = class extends Generator {
 			this.destinationRoot(this.destinationPath(this.props.name));
 		}
 
+		this.composeWith(require.resolve('../git'), {
+			name: this.props.name,
+			githubAccount: this.props.githubAccount
+		});
+
 		this.composeWith(require.resolve('generator-license'), {
 			name: this.props.authorName,
 			email: this.props.authorEmail,
@@ -82,7 +87,7 @@ module.exports = class extends Generator {
 			this.composeWith(require.resolve('../readme'), {
 				name: this.props.name,
 				description: this.props.description,
-				githubUsername: this.props.githubUsername,
+				githubAccount: this.props.githubAccount,
 				authorName: this.props.authorName,
 				authorUrl: this.props.authorUrl,
 				coveralls: this.props.includeCoveralls
