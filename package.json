@@ -1,12 +1,11 @@
 {
   "name": "generator-nmod",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Yeoman generator to build an node module using es6, nyc, travis-ci, coveralls",
   "main": "./index.js",
   "scripts": {
     "lint": "eslint generators test",
-    "test": "npm run lint && mocha test/**/*.test.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": "npm run lint && mocha test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,16 @@
     "url": "https://github.com/taoyuan/generator-nmod/issues"
   },
   "homepage": "https://github.com/taoyuan/generator-nmod#readme",
+  "dependencies": {
+    "camelcase": "^4.0.0",
+    "chalk": "^1.1.3",
+    "generator-license": "^4.0.0",
+    "git-config": "0.0.7",
+    "glob": "^7.1.1",
+    "lodash": "^4.17.2",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^1.0.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
@@ -54,19 +63,5 @@
     "xo": "^0.17.1",
     "yeoman-assert": "^2.2.2",
     "yeoman-test": "^1.6.0"
-  },
-  "dependencies": {
-    "camelcase": "^4.0.0",
-    "chalk": "^1.1.3",
-    "generator-license": "^4.0.0",
-    "git-config": "0.0.7",
-    "glob": "^7.1.1",
-    "lodash": "^4.17.2",
-    "mkdirp": "^0.5.1",
-    "yeoman-generator": "^1.0.1"
-  },
-  "nyc": {
-    "instrument": false,
-    "sourceMap": false
   }
 }

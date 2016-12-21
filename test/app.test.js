@@ -7,7 +7,7 @@ const assert = require('yeoman-assert');
 describe('nmod:app', () => {
 	describe('defaults', () => {
 		before(() => {
-			return helpers.run(path.join(__dirname, '../generators/app'))
+			return helpers.run(path.resolve(__dirname, '../generators/app'))
 				.withPrompts({
 					name: 'nmod-temp',
 					description: 'A node module',
