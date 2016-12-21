@@ -4,5 +4,5 @@ node_modules
 # build artifacts
 **/dist/*
 **/lib/*
-**/.nyc_output/*
-**/coverage/*
+.nyc_output
+coverage
