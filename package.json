@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint app test",
     "test": "npm run lint && mocha test/**/*.test.js",
-    "prepublish": "in-install",
-    "clean:coverage": "rimraf .nyc_output coverage"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "in-install"
   },
   "repository": {
     "type": "git",
