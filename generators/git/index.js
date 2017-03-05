@@ -68,7 +68,7 @@ module.exports = class extends Generator {
 		if (!this.originUrl) {
 			const url = this.pkg.repository && (this.pkg.repository.url || this.pkg.repository);
 			let repoSSH = url;
-			if (url && url.indexOf('.git') === -1) {
+			if (url && url.indexOf('.git') === -1 && url.indexOf('://') === -1) {
 				repoSSH = 'git@github.com:' + url+ '.git';
 			}
 			this.spawnCommandSync('git', ['remote', 'add', 'origin', repoSSH], {
